@@ -1,3 +1,4 @@
+ #!/usr/bin/python3
 import os 
 from PIL import Image
 os.system('clear') 
@@ -47,6 +48,5 @@ for im in ImageList:
         newim.paste(im=im)
     else: 
         newim.paste(im=im,box=(0,ImageList[ImageList.index(im)-1].size[0]))
-newim.show()
 newim.save('image.pdf',format="PDF")
 newim.show()
