@@ -42,11 +42,11 @@ for imgpat in ImagePath:
         ImageList.append(im)
     c = c+1 
 l,b = checklargestsize(ImageList)
-newim = Image.new('RGB',(l,b*len(ImageList)),(250,250,250))
+newim = Image.new('RGB',(b,l*len(ImageList)),(250,250,250)) ### where size has too be format  
 for im in ImageList:
     if ImageList.index(im) == 0 :
         newim.paste(im=im)
     else: 
-        newim.paste(im=im,box=(0,ImageList[ImageList.index(im)-1].size[0]))
+        newim.paste(im=im,box=(ImageList[ImageList.index(im)-1].size[0],ImageList[ImageList.index(im)-1].size[1]))
 newim.save('image.pdf',format="PDF")
 newim.show()
